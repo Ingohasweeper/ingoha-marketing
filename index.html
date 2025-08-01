@@ -3,57 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingoha - Advanced Malware Protection</title>
+    <title>Ingoha - Advanced Malware Protection for Security Professionals</title>
+    <meta name="description" content="Professional malware detection and removal platform with AI-powered predictive analytics, real-time threat intelligence, and multi-layer security scanning for IT professionals and MSPs.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: hsl(222.2, 84%, 4.9%); color: hsl(210, 40%, 98%); line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .hero { padding: 100px 0; text-align: center; background: linear-gradient(135deg, #1e293b, #0f172a); }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #00d9ff; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #94a3b8; }
-        .btn { display: inline-block; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
-        .btn-primary { background: #00d9ff; color: #000; }
-        .pricing { padding: 80px 0; background: #1e293b; }
-        .pricing h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: #00d9ff; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
-        .pricing-card { background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 30px; text-align: center; }
-        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; }
-        .price { font-size: 3rem; color: #00d9ff; margin-bottom: 20px; }
-        .features { list-style: none; margin-bottom: 30px; }
-        .features li { padding: 8px 0; color: #94a3b8; border-bottom: 1px solid #334155; }
-        .featured { border-color: #00d9ff; transform: scale(1.05); }
+        
+        /* Hero Section */
+        .hero { padding: 120px 0; text-align: center; background: linear-gradient(135deg, hsl(217.2, 32.6%, 17.5%), hsl(222.2, 84%, 4.9%)); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23334155" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); opacity: 0.1; }
+        .hero-content { position: relative; z-index: 1; }
+        .logo { width: 60px; height: 60px; margin: 0 auto 20px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; color: hsl(210, 40%, 98%); font-weight: 700; }
+        .hero .brand { color: hsl(142.1, 76.2%, 36.3%); }
+        .hero .subtitle { font-size: 1.4rem; margin-bottom: 15px; color: hsl(215.4, 16.3%, 46.9%); font-weight: 500; }
+        .hero .description { font-size: 1.1rem; margin-bottom: 40px; color: hsl(215.4, 16.3%, 46.9%); max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        /* Buttons */
+        .btn { display: inline-block; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin: 0 10px; }
+        .btn-primary { background: hsl(142.1, 76.2%, 36.3%); color: hsl(210, 40%, 98%); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px hsla(142.1, 76.2%, 36.3%, 0.3); background: hsl(142.1, 76.2%, 40%); }
+        .btn-secondary { background: transparent; color: hsl(142.1, 76.2%, 36.3%); border: 2px solid hsl(142.1, 76.2%, 36.3%); }
+        .btn-secondary:hover { background: hsl(142.1, 76.2%, 36.3%); color: hsl(210, 40%, 98%); }
+        
+        /* Features Section */
+        .features { padding: 100px 0; background: hsl(217.2, 32.6%, 17.5%); }
+        .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: hsl(142.1, 76.2%, 36.3%); }
+        .features .subtitle { text-align: center; font-size: 1.2rem; color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 60px; }
+        .feature-card { background: hsl(222.2, 84%, 4.9%); border: 1px solid hsl(215, 25%, 27%); border-radius: 12px; padding: 40px; text-align: center; transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); border-color: hsl(142.1, 76.2%, 36.3%); box-shadow: 0 10px 30px hsla(142.1, 76.2%, 36.3%, 0.1); }
+        .feature-icon { width: 60px; height: 60px; background: hsl(142.1, 76.2%, 36.3%); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: hsl(210, 40%, 98%); }
+        .feature-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: hsl(210, 40%, 98%); }
+        .feature-card p { color: hsl(215.4, 16.3%, 46.9%); }
+        
+        /* Stats Section */
+        .stats { padding: 80px 0; background: linear-gradient(135deg, hsl(222.2, 84%, 4.9%), hsl(217.2, 32.6%, 17.5%)); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat-item h3 { font-size: 3rem; color: hsl(142.1, 76.2%, 36.3%); margin-bottom: 10px; font-weight: 700; }
+        .stat-item p { color: hsl(215.4, 16.3%, 46.9%); font-size: 1.1rem; }
+        
+        /* Pricing Section */
+        .pricing { padding: 100px 0; background: hsl(217.2, 32.6%, 17.5%); }
+        .pricing h2 { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: hsl(142.1, 76.2%, 36.3%); }
+        .pricing .subtitle { text-align: center; font-size: 1.2rem; color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 60px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: hsl(222.2, 84%, 4.9%); border: 1px solid hsl(215, 25%, 27%); border-radius: 16px; padding: 40px; text-align: center; position: relative; transition: all 0.3s ease; }
+        .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px hsla(222.2, 84%, 4.9%, 0.3); }
+        .pricing-card.featured { border-color: hsl(142.1, 76.2%, 36.3%); transform: scale(1.05); }
+        .pricing-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: hsl(142.1, 76.2%, 36.3%); color: hsl(210, 40%, 98%); padding: 6px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .pricing-card h3 { font-size: 1.6rem; margin-bottom: 20px; color: hsl(210, 40%, 98%); }
+        .price { font-size: 3rem; color: hsl(142.1, 76.2%, 36.3%); margin-bottom: 30px; font-weight: 700; }
+        .price span { font-size: 1rem; color: hsl(215.4, 16.3%, 46.9%); }
+        .features-list { list-style: none; margin-bottom: 40px; text-align: left; }
+        .features-list li { padding: 12px 0; color: hsl(215.4, 16.3%, 46.9%); border-bottom: 1px solid hsl(215, 25%, 27%); position: relative; padding-left: 30px; }
+        .features-list li::before { content: '✓'; position: absolute; left: 0; color: hsl(142.1, 76.2%, 36.3%); font-weight: bold; }
+        
+        /* About Section */
+        .about { padding: 100px 0; background: hsl(217.2, 32.6%, 17.5%); }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: hsl(142.1, 76.2%, 36.3%); }
+        .about-text p { font-size: 1.1rem; color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 20px; }
+        .about-features { list-style: none; }
+        .about-features li { padding: 10px 0; color: hsl(215.4, 16.3%, 46.9%); position: relative; padding-left: 30px; }
+        .about-features li::before { content: '→'; position: absolute; left: 0; color: hsl(142.1, 76.2%, 36.3%); font-weight: bold; }
+        
+        /* CTA Section */
+        .cta { padding: 80px 0; background: hsl(142.1, 76.2%, 36.3%); color: hsl(210, 40%, 98%); text-align: center; }
+        .cta h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
+        .cta p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+        .cta .btn { background: hsl(222.2, 84%, 4.9%); color: hsl(210, 40%, 98%); }
+        .cta .btn:hover { background: hsl(217.2, 32.6%, 17.5%); transform: translateY(-2px); }
+        
+        /* Footer */
+        .footer { padding: 60px 0 30px; background: hsl(222.2, 84%, 4.9%); text-align: center; }
+        .footer p { color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
+        .footer-links a { color: hsl(215.4, 16.3%, 46.9%); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: hsl(142.1, 76.2%, 36.3%); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .features-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; }
+            .pricing-card.featured { transform: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Ingoha</h1>
-            <p>Advanced Malware Protection for Security Professionals</p>
-            <a href="https://app.ingoha.com/api/login" class="btn btn-primary">Start Free Trial</a>
+            <div class="hero-content">
+                <svg class="logo" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="shield-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="lightning-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="bug-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M150 50 L210 75 L210 140 Q210 170 150 200 Q90 170 90 140 L90 75 Z" fill="none" stroke="url(#shield-gradient)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M125 85 L145 85 L135 115 L155 115 L130 160 L140 125 L125 125 Z" fill="url(#lightning-gradient)" stroke="none"/>
+                    <ellipse cx="170" cy="125" rx="18" ry="22" fill="url(#bug-gradient)"/>
+                    <line x1="170" y1="108" x2="170" y2="142" stroke="#2d1b69" stroke-width="2"/>
+                    <circle cx="164" cy="106" r="2" fill="#f472b6"/>
+                    <circle cx="176" cy="106" r="2" fill="#f472b6"/>
+                    <line x1="164" y1="106" x2="161" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="176" y1="106" x2="179" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="155" y1="115" x2="148" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="185" y1="115" x2="192" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="155" y1="125" x2="148" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="185" y1="125" x2="192" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="155" y1="135" x2="148" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="185" y1="135" x2="192" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="166" cy="118" r="1.5" fill="#2d1b69"/>
+                    <circle cx="174" cy="118" r="1.5" fill="#2d1b69"/>
+                </svg>
+                <h1><span class="brand">Ingoha</span></h1>
+                <p class="subtitle">Advanced Malware Protection for Security Professionals</p>
+                <p class="description">Professional-grade threat detection platform with AI-powered predictive analytics, multi-layer scanning, and real-time threat intelligence designed for IT administrators, security analysts, and managed service providers.</p>
+                <div class="hero-buttons">
+                    <a href="https://app.ingoha.com/api/login" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>99.8%</h3>
+                    <p>Detection Accuracy</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Threat Families Tracked</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Real-time Monitoring</p>
+                </div>
+                <div class="stat-item">
+                    <h3>API</h3>
+                    <p>VirusTotal Integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Comprehensive Security Platform</h2>
+            <p class="subtitle">Multi-layer threat detection combining signature analysis, heuristic scanning, and AI-powered predictive analytics</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Real-time Threat Detection</h3>
+                    <p>Continuous monitoring with instant threat identification using advanced behavioral analysis and signature matching across multiple detection engines.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Predictive Analytics</h3>
+                    <p>Machine learning algorithms analyze threat patterns to predict emerging security risks and provide proactive protection recommendations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Multi-Layer Detection Engine</h3>
+                    <p>Combines signature-based detection, heuristic analysis, VirusTotal integration, and threat intelligence for comprehensive coverage.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Advanced Threat Intelligence</h3>
+                    <p>Real-time threat intelligence feeds with IOC tracking, malware family classification, and geographic threat analysis.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>System Performance Monitoring</h3>
+                    <p>Monitor system health, resource usage, and security metrics with configurable alerting and automated response capabilities.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Quarantine Management</h3>
+                    <p>Safely isolate and manage detected threats with detailed analysis reports and controlled removal procedures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Built for Security Professionals</h2>
+                    <p>Ingoha is designed specifically for IT administrators, security analysts, and managed service providers who need professional-grade malware detection capabilities beyond consumer antivirus solutions.</p>
+                    <p>Our platform provides the deep analysis tools and threat intelligence that security professionals require to protect modern IT environments.</p>
+                    
+                    <ul class="about-features">
+                        <li>Enterprise-grade threat detection accuracy</li>
+                        <li>Conservative false-positive rates</li>
+                        <li>Comprehensive threat family analysis</li>
+                        <li>API access for integration workflows</li>
+                        <li>Scalable monitoring for multiple systems</li>
+                        <li>Professional support and documentation</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <div class="feature-card">
+                        <h3>Why Choose Ingoha?</h3>
+                        <p>Unlike consumer antivirus solutions, Ingoha focuses on analysis and investigation tools that complement your existing security stack. We provide the threat intelligence and predictive capabilities that security professionals need for proactive defense.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
     <section class="pricing">
         <div class="container">
             <h2>Simple, Transparent Pricing</h2>
+            <p class="subtitle">Professional security tools with predictive analytics at competitive rates</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter</h3>
-                    <div class="price">$9<span style="font-size:1rem">/month</span></div>
-                    <ul class="features">
+                    <div class="price">$9<span>/month</span></div>
+                    <ul class="features-list">
                         <li>Up to 10 monitored systems</li>
                         <li>Real-time threat detection</li>
                         <li>Advanced threat intelligence</li>
                         <li>Basic predictive analytics</li>
                         <li>Email support</li>
                         <li>Dashboard access</li>
+                        <li>VirusTotal integration</li>
+                        <li>Signature-based detection</li>
                     </ul>
                     <a href="https://app.ingoha.com/api/login" class="btn btn-primary">Start Free Trial</a>
                 </div>
                 <div class="pricing-card featured">
                     <h3>Professional</h3>
-                    <div class="price">$29<span style="font-size:1rem">/month</span></div>
-                    <ul class="features">
+                    <div class="price">$29<span>/month</span></div>
+                    <ul class="features-list">
                         <li>Up to 50 monitored systems</li>
                         <li>Real-time threat detection</li>
                         <li>Advanced threat intelligence</li>
@@ -61,11 +271,36 @@
                         <li>Email support</li>
                         <li>API access</li>
                         <li>Priority queue</li>
+                        <li>Advanced heuristic analysis</li>
+                        <li>Custom monitoring rules</li>
+                        <li>Threat campaign tracking</li>
                     </ul>
                     <a href="https://app.ingoha.com/api/login" class="btn btn-primary">Start Free Trial</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Enhance Your Security Posture?</h2>
+            <p>Join security professionals who trust Ingoha for advanced malware detection and threat intelligence.</p>
+            <a href="https://app.ingoha.com/api/login" class="btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://app.ingoha.com">Platform Login</a>
+                <a href="mailto:support@ingoha.com">Support</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#features">Features</a>
+            </div>
+            <p>&copy; 2025 Ingoha. Professional malware detection and threat intelligence platform.</p>
+        </div>
+    </footer>
 </body>
 </html>
