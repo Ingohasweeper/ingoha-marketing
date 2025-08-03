@@ -119,78 +119,78 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <svg class="logo" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <!-- Lightning gradient (yellow to orange) -->
                         <linearGradient id="lightning-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#facc15;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#FFEB3B;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FF9800;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF5722;stop-opacity:1" />
                         </linearGradient>
                         
                         <!-- Bug gradient (pink to purple) -->
                         <linearGradient id="bug-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#E91E63;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#9C27B0;stop-opacity:1" />
                         </linearGradient>
                         
                         <!-- Shield gradient (bright green) -->
                         <linearGradient id="shield-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
-                        </linearGradient>
-                        
-                        <!-- Text gradient (bright green) -->
-                        <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#76FF03;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:1" />
                         </linearGradient>
                     </defs>
                     
-                    <!-- Shield outline -->
-                    <path d="M150 50 L210 75 L210 140 Q210 170 150 200 Q90 170 90 140 L90 75 Z" 
+                    <!-- Modern Shield outline -->
+                    <path d="M200 50 
+                             L320 90 
+                             L320 200 
+                             Q320 280 200 350 
+                             Q80 280 80 200 
+                             L80 90 Z" 
                           fill="none" 
                           stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
+                          stroke-width="15" 
                           stroke-linecap="round" 
                           stroke-linejoin="round"/>
                     
-                    <!-- Lightning bolt -->
-                    <path d="M125 85 L145 85 L135 115 L155 115 L130 160 L140 125 L125 125 Z" 
+                    <!-- Lightning bolt (left side) -->
+                    <path d="M140 130 
+                             L165 130 
+                             L150 180 
+                             L175 180 
+                             L135 250 
+                             L155 200 
+                             L135 200 
+                             L150 150 
+                             L140 130 Z" 
                           fill="url(#lightning-gradient)" 
                           stroke="none"/>
                     
-                    <!-- Bug/malware symbol -->
-                    <ellipse cx="170" cy="125" rx="18" ry="22" fill="url(#bug-gradient)"/>
+                    <!-- Bug/malware symbol (right side) -->
+                    <!-- Bug body -->
+                    <ellipse cx="260" cy="200" rx="25" ry="35" fill="url(#bug-gradient)"/>
                     
-                    <!-- Bug body center line -->
-                    <line x1="170" y1="108" x2="170" y2="142" stroke="#2d1b69" stroke-width="2"/>
+                    <!-- Bug center line -->
+                    <line x1="260" y1="170" x2="260" y2="230" stroke="#4A148C" stroke-width="3"/>
                     
-                    <!-- Bug antennae with dots -->
-                    <circle cx="164" cy="106" r="2" fill="#f472b6"/>
-                    <circle cx="176" cy="106" r="2" fill="#f472b6"/>
-                    <line x1="164" y1="106" x2="161" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="176" y1="106" x2="179" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Bug antennae -->
+                    <circle cx="250" cy="175" r="3" fill="#E91E63"/>
+                    <circle cx="270" cy="175" r="3" fill="#E91E63"/>
+                    <line x1="250" y1="175" x2="245" y2="165" stroke="#E91E63" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="270" y1="175" x2="275" y2="165" stroke="#E91E63" stroke-width="3" stroke-linecap="round"/>
                     
                     <!-- Bug legs - 3 pairs -->
-                    <line x1="155" y1="115" x2="148" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="185" y1="115" x2="192" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="155" y1="125" x2="148" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="185" y1="125" x2="192" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="155" y1="135" x2="148" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="185" y1="135" x2="192" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="235" y1="190" x2="220" y2="185" stroke="#E91E63" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="285" y1="190" x2="300" y2="185" stroke="#E91E63" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="235" y1="200" x2="215" y2="200" stroke="#E91E63" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="285" y1="200" x2="305" y2="200" stroke="#E91E63" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="235" y1="210" x2="220" y2="215" stroke="#E91E63" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="285" y1="210" x2="300" y2="215" stroke="#E91E63" stroke-width="4" stroke-linecap="round"/>
                     
                     <!-- Bug eyes -->
-                    <circle cx="166" cy="118" r="1.5" fill="#2d1b69"/>
-                    <circle cx="174" cy="118" r="1.5" fill="#2d1b69"/>
-                    
-                    <!-- Ingoha Text -->
-                    <text x="370" y="140" 
-                          font-family="Inter, Arial, sans-serif" 
-                          font-size="80" 
-                          font-weight="700" 
-                          text-anchor="middle" 
-                          fill="url(#text-gradient)">Ingoha</text>
+                    <circle cx="252" cy="190" r="2.5" fill="#4A148C"/>
+                    <circle cx="268" cy="190" r="2.5" fill="#4A148C"/>
                 </svg>
                 <h1><span class="brand">Ingoha</span></h1>
                 <p class="subtitle">Advanced Malware Protection for Security Professionals</p>
