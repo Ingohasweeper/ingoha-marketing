@@ -119,9 +119,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <svg class="logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <!-- Lightning gradient (bright yellow to orange) -->
+                        <!-- Lightning gradient (yellow to orange) -->
                         <linearGradient id="lightning-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
                             <stop offset="50%" style="stop-color:#facc15;stop-opacity:1" />
@@ -139,85 +139,58 @@
                             <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
                         </linearGradient>
+                        
+                        <!-- Text gradient (bright green) -->
+                        <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
+                        </linearGradient>
                     </defs>
                     
-                    <!-- PROMINENT Lightning bolt on LEFT - extends beyond shield -->
-                    <path d="M80 60 
-                             L120 60 
-                             L100 140 
-                             L140 140 
-                             L70 240 
-                             L110 180 
-                             L85 180 
-                             L110 100 
-                             L80 60 Z" 
+                    <!-- Shield outline - moved left -->
+                    <path d="M150 50 L210 75 L210 140 Q210 170 150 200 Q90 170 90 140 L90 75 Z" 
+                          fill="none" 
+                          stroke="url(#shield-gradient)" 
+                          stroke-width="12" 
+                          stroke-linecap="round" 
+                          stroke-linejoin="round"/>
+                    
+                    <!-- Lightning bolt - moved left -->
+                    <path d="M125 85 L145 85 L135 115 L155 115 L130 160 L140 125 L125 125 Z" 
                           fill="url(#lightning-gradient)" 
                           stroke="none"/>
                     
-                    <!-- PROMINENT Bug on RIGHT - extends beyond shield -->
-                    <ellipse cx="320" cy="200" rx="25" ry="30" fill="url(#bug-gradient)"/>
+                    <!-- Bug/malware symbol - moved left -->
+                    <ellipse cx="170" cy="125" rx="18" ry="22" fill="url(#bug-gradient)"/>
                     
-                    <!-- Bug details -->
-                    <line x1="320" y1="175" x2="320" y2="225" stroke="#2d1b69" stroke-width="3"/>
-                    <circle cx="315" cy="185" r="2" fill="#2d1b69"/>
-                    <circle cx="325" cy="185" r="2" fill="#2d1b69"/>
+                    <!-- Bug body center line -->
+                    <line x1="170" y1="108" x2="170" y2="142" stroke="#2d1b69" stroke-width="2"/>
                     
-                    <!-- Bug antennae extending up -->
-                    <circle cx="312" cy="175" r="2" fill="#f472b6"/>
-                    <circle cx="328" cy="175" r="2" fill="#f472b6"/>
-                    <line x1="312" y1="175" x2="308" y2="165" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="328" y1="175" x2="332" y2="165" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Bug antennae with dots -->
+                    <circle cx="164" cy="106" r="2" fill="#f472b6"/>
+                    <circle cx="176" cy="106" r="2" fill="#f472b6"/>
+                    <line x1="164" y1="106" x2="161" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="176" y1="106" x2="179" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
                     
-                    <!-- Bug legs extending FAR beyond shield -->
-                    <line x1="295" y1="190" x2="270" y2="185" stroke="#f472b6" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="345" y1="190" x2="370" y2="185" stroke="#f472b6" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="295" y1="200" x2="265" y2="200" stroke="#f472b6" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="345" y1="200" x2="375" y2="200" stroke="#f472b6" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="295" y1="210" x2="270" y2="215" stroke="#f472b6" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="345" y1="210" x2="370" y2="215" stroke="#f472b6" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Bug legs - 3 pairs -->
+                    <line x1="155" y1="115" x2="148" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="185" y1="115" x2="192" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="155" y1="125" x2="148" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="185" y1="125" x2="192" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="155" y1="135" x2="148" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="185" y1="135" x2="192" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
                     
-                    <!-- SHIELD with CLEAR BREAKS where lightning and bug pass through -->
-                    <!-- Top section -->
-                    <path d="M200 80 L260 100 L260 150" 
-                          fill="none" 
-                          stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
-                          stroke-linecap="round"/>
+                    <!-- Bug eyes -->
+                    <circle cx="166" cy="118" r="1.5" fill="#2d1b69"/>
+                    <circle cx="174" cy="118" r="1.5" fill="#2d1b69"/>
                     
-                    <!-- Top left section (BREAK for lightning) -->
-                    <path d="M200 80 L140 95" 
-                          fill="none" 
-                          stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
-                          stroke-linecap="round"/>
-                    
-                    <!-- Left side (BREAK for lightning) -->
-                    <path d="M130 120 L130 160" 
-                          fill="none" 
-                          stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
-                          stroke-linecap="round"/>
-                    
-                    <!-- Bottom left -->
-                    <path d="M130 220 L130 260 Q130 310 200 340" 
-                          fill="none" 
-                          stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
-                          stroke-linecap="round"/>
-                    
-                    <!-- Bottom -->
-                    <path d="M200 340 Q270 310 270 260 L270 230" 
-                          fill="none" 
-                          stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
-                          stroke-linecap="round"/>
-                    
-                    <!-- Right side (BREAK for bug legs) -->
-                    <path d="M270 180 L270 170" 
-                          fill="none" 
-                          stroke="url(#shield-gradient)" 
-                          stroke-width="12" 
-                          stroke-linecap="round"/>
+                    <!-- Ingoha Text - moved right with space -->
+                    <text x="370" y="140" 
+                          font-family="Inter, Arial, sans-serif" 
+                          font-size="80" 
+                          font-weight="700" 
+                          text-anchor="middle" 
+                          fill="url(#text-gradient)">Ingoha</text>
                 </svg>
                 <p class="subtitle">Advanced Malware Protection for Security Professionals</p>
                 <p class="description">Professional-grade threat detection platform with AI-powered predictive analytics, multi-layer scanning, and real-time threat intelligence designed for IT administrators, security analysts, and managed service providers.</p>
