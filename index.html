@@ -14,7 +14,7 @@
         .hero { padding: 120px 0; text-align: center; background: linear-gradient(135deg, hsl(217.2, 32.6%, 17.5%), hsl(222.2, 84%, 4.9%)); position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23334155" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); opacity: 0.1; }
         .hero-content { position: relative; z-index: 1; }
-        .logo { width: 300px; height: 192px; margin: 0 auto 20px; }
+        .logo { width: 500px; height: 320px; margin: 0 auto 30px; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 20px; color: hsl(210, 40%, 98%); font-weight: 700; }
         .hero .brand { color: hsl(142.1, 76.2%, 36.3%); }
         .hero .subtitle { font-size: 1.4rem; margin-bottom: 15px; color: hsl(215.4, 16.3%, 46.9%); font-weight: 500; }
@@ -76,6 +76,25 @@
         .cta .btn { background: hsl(222.2, 84%, 4.9%); color: hsl(210, 40%, 98%); }
         .cta .btn:hover { background: hsl(217.2, 32.6%, 17.5%); transform: translateY(-2px); }
         
+        /* Contact Section */
+        .contact { padding: 100px 0; background: hsl(217.2, 32.6%, 17.5%); }
+        .contact h2 { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: hsl(142.1, 76.2%, 36.3%); }
+        .contact .subtitle { text-align: center; font-size: 1.2rem; color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .contact-info { display: grid; gap: 30px; }
+        .contact-card { background: hsl(222.2, 84%, 4.9%); border: 1px solid hsl(215, 25%, 27%); border-radius: 12px; padding: 30px; text-align: center; transition: all 0.3s ease; }
+        .contact-card:hover { transform: translateY(-3px); border-color: hsl(142.1, 76.2%, 36.3%); }
+        .contact-icon { width: 60px; height: 60px; background: hsl(142.1, 76.2%, 36.3%); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: hsl(210, 40%, 98%); }
+        .contact-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: hsl(210, 40%, 98%); }
+        .contact-card p { color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 20px; }
+        .contact-form-container { background: hsl(222.2, 84%, 4.9%); border: 1px solid hsl(215, 25%, 27%); border-radius: 16px; padding: 40px; }
+        .contact-form h3 { font-size: 1.5rem; margin-bottom: 30px; color: hsl(210, 40%, 98%); text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px; border: 1px solid hsl(215, 25%, 27%); border-radius: 8px; background: hsl(217.2, 32.6%, 17.5%); color: hsl(210, 40%, 98%); font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: hsl(142.1, 76.2%, 36.3%); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: hsl(215.4, 16.3%, 46.9%); }
+        .contact-form button { width: 100%; }
+
         /* Footer */
         .footer { padding: 60px 0 30px; background: hsl(222.2, 84%, 4.9%); text-align: center; }
         .footer p { color: hsl(215.4, 16.3%, 46.9%); margin-bottom: 20px; }
@@ -86,8 +105,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
+            .logo { width: 300px; height: 192px; }
             .features-grid, .pricing-grid { grid-template-columns: 1fr; }
             .about-content { grid-template-columns: 1fr; }
+            .contact-content { grid-template-columns: 1fr; }
             .pricing-card.featured { transform: none; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -100,35 +121,76 @@
             <div class="hero-content">
                 <svg class="logo" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="shield-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
-                        </linearGradient>
+                        <!-- Lightning gradient (yellow to orange) -->
                         <linearGradient id="lightning-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#facc15;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
                         </linearGradient>
+                        
+                        <!-- Bug gradient (pink to purple) -->
                         <linearGradient id="bug-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
                         </linearGradient>
+                        
+                        <!-- Shield gradient (bright green) -->
+                        <linearGradient id="shield-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
+                        </linearGradient>
+                        
+                        <!-- Text gradient (bright green) -->
+                        <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
+                        </linearGradient>
                     </defs>
-                    <path d="M150 50 L210 75 L210 140 Q210 170 150 200 Q90 170 90 140 L90 75 Z" fill="none" stroke="url(#shield-gradient)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M125 85 L145 85 L135 115 L155 115 L130 160 L140 125 L125 125 Z" fill="url(#lightning-gradient)" stroke="none"/>
+                    
+                    <!-- Shield outline -->
+                    <path d="M150 50 L210 75 L210 140 Q210 170 150 200 Q90 170 90 140 L90 75 Z" 
+                          fill="none" 
+                          stroke="url(#shield-gradient)" 
+                          stroke-width="12" 
+                          stroke-linecap="round" 
+                          stroke-linejoin="round"/>
+                    
+                    <!-- Lightning bolt -->
+                    <path d="M125 85 L145 85 L135 115 L155 115 L130 160 L140 125 L125 125 Z" 
+                          fill="url(#lightning-gradient)" 
+                          stroke="none"/>
+                    
+                    <!-- Bug/malware symbol -->
                     <ellipse cx="170" cy="125" rx="18" ry="22" fill="url(#bug-gradient)"/>
+                    
+                    <!-- Bug body center line -->
                     <line x1="170" y1="108" x2="170" y2="142" stroke="#2d1b69" stroke-width="2"/>
+                    
+                    <!-- Bug antennae with dots -->
                     <circle cx="164" cy="106" r="2" fill="#f472b6"/>
                     <circle cx="176" cy="106" r="2" fill="#f472b6"/>
                     <line x1="164" y1="106" x2="161" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
                     <line x1="176" y1="106" x2="179" y2="100" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
+                    
+                    <!-- Bug legs - 3 pairs -->
                     <line x1="155" y1="115" x2="148" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
                     <line x1="185" y1="115" x2="192" y2="115" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
                     <line x1="155" y1="125" x2="148" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
                     <line x1="185" y1="125" x2="192" y2="125" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
                     <line x1="155" y1="135" x2="148" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
                     <line x1="185" y1="135" x2="192" y2="135" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+                    
+                    <!-- Bug eyes -->
                     <circle cx="166" cy="118" r="1.5" fill="#2d1b69"/>
                     <circle cx="174" cy="118" r="1.5" fill="#2d1b69"/>
+                    
+                    <!-- Ingoha Text -->
+                    <text x="370" y="140" 
+                          font-family="Inter, Arial, sans-serif" 
+                          font-size="80" 
+                          font-weight="700" 
+                          text-anchor="middle" 
+                          fill="url(#text-gradient)">Ingoha</text>
                 </svg>
                 <h1><span class="brand">Ingoha</span></h1>
                 <p class="subtitle">Advanced Malware Protection for Security Professionals</p>
@@ -290,6 +352,64 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="subtitle">Ready to enhance your security posture? Contact our team for a personalized consultation.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Support</h3>
+                        <p>support@ingoha.com</p>
+                        <a href="mailto:support@ingoha.com" class="btn btn-secondary">Send Email</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <h3>Business Inquiries</h3>
+                        <p>sales@ingoha.com</p>
+                        <a href="mailto:sales@ingoha.com" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🔧</div>
+                        <h3>Technical Support</h3>
+                        <p>Available 24/7 for Professional plan subscribers</p>
+                        <a href="https://app.ingoha.com/api/login" class="btn btn-secondary">Login for Support</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <h3>Quick Contact Form</h3>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Inquiry Type</option>
+                                <option value="sales">Sales & Pricing</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="demo">Request Demo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -298,6 +418,7 @@
                 <a href="mailto:support@ingoha.com">Support</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
             </div>
             <p>&copy; 2025 Ingoha. Professional malware detection and threat intelligence platform.</p>
         </div>
